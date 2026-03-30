@@ -16,7 +16,9 @@ const app = express();
 connectDB();
 
 /* MIDDLEWARE */
-app.use(cors());
+app.use(cors({
+  origin: "*", // Allow all origins (for development). In production, specify your frontend URL.
+}));
 app.use(express.json());
 app.use(passport.initialize());
 
